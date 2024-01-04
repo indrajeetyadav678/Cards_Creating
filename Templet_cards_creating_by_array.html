@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple_card_creating</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./ecom.css">
+    <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(236, 233, 229);
+}
+
+#div1 {
+    width: 100%;
+}
+
+#card {
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* grid-column-gap: 50px; */
+    grid-row-gap: 50px;
+    padding-left: 50px;
+    padding-top: 100px;
+
+    /* grid-auto-flow: row; */
+}
+
+@media(max-width:769px) {
+    #card {
+        display: grid;
+        grid-template-columns: auto auto;
+
+    }
+
+}
+
+@media(max-width:476px) {
+    #card {
+        display: grid;
+        grid-template-columns: auto;
+
+    }
+}
+
+#card_box {
+    width: 350px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    text-align: center;
+    /* background-color: white; */
+    overflow-x: hidden;
+    border-radius: 15px;
+    background-color: rgb(247, 246, 246);
+
+}
+
+#img-box {
+    width: 350px;
+    height: 250px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-bottom: 10px;
+}
+
+/* #img-box::-webkit-scrollbar{
+    display: none;
+}  */
+
+#image1 {
+    width: 350px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 14px;
+    /* color: white; */
+}
+
+.price::before{
+    content: "₹  ";
+}
+
+.brand {
+    font-size: 18px;
+    /* color: white; */
+
+}
+
+.product {
+    font-size: 20px;
+    /* color: white; */
+
+}
+
+#manubar{
+    width:400px;
+    list-style: none;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+}
+
+#manubar li{
+    margin-left: 30px;
+}
+
+#manubar li a{
+    font-size: 25px;
+    color:white;
+    text-decoration: none;
+}
+
+#shop_name{
+    font-size: 35px;
+    color:white;
+}
+
+#icon-manubar{
+    /* width:400px; */
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+#icon-manubar li{
+    margin-right:30px;
+}
+
+#icon-manubar li a{
+   font-size: 25px;
+   color:white;
+}
+
+#navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 39, 39);    
+}
+
+#search-box{
+    width:250px;
+    height:30px;
+   border-radius: 8px;
+   background-image: url(); 
+}
+    </style>
+
+</head>
+
+<body onload="showing()">
+    <nav id="navbar">
+        <ul id="manubar">
+            <li><a href="#">CATEGORIES</a></li>
+            <li><a href="#">LUXE</a></li>
+            <li><a href="#">BARGAINS</a></li>
+        </ul>
+        <div id="shop_name">SHOPPERS STOP</div>
+        <div id="search-box">
+            <ul id="icon-manubar">
+                <li><input type="search" name="search" id="search-box"></li>
+                <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-circle-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="div1">
+        <div id="card">
+
+        </div>
+    </div>
+    <!-- ============ js file section ============ -->
+    <script>
+        function showing() {
+            let images = [
+                { // 1
+                    images: "https://images.unsplash.com/photo-1575936123452-b67c3203c357?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
+                    rating: "4.2",
+                    price: "6599",
+                    brand: "LG",
+                    p_name: "Camera"
+                },
+
+                {   // 2
+                    images: "https://media.istockphoto.com/id/1468157150/photo/hologram-shoes-and-sports-for-fitness-run-and-speed-for-health-tracking-outdoor-future.webp?b=1&s=170667a&w=0&k=20&c=JKQOi4kdoPRz42MbxHfebtYRiY53s7wvfGF0H-cFrOI=",
+                    rating: "4.2",
+                    price: "6599",
+                    brand: "puma",
+                    p_name: "Shoes"
+                },
+
+                {    // 3
+                    images: "https://media.gettyimages.com/id/172417586/photo/elegant-black-leather-shoes.jpg?s=612x612&w=gi&k=20&c=_HiU2PSG-krAT5-QIlDskHEhmXOTYQzSushSW51F25c=",
+                    rating: "4.2",
+                    price: "10099",
+                    brand: "Elegant",
+                    p_name: "Elegant Black Leather Shoes"
+                },
+
+                {   // 4
+                    images: "https://media.gettyimages.com/id/171253262/photo/brown-leather-shoes.jpg?s=612x612&w=gi&k=20&c=fbZpzjJADhJgizLjQaqI4ti6966JypOo6vhfFaBGm3A=",
+                    rating: "4.2",
+                    price: "9999",
+                    brand: "leather shoes",
+                    p_name: "Brown leather shoes"
+                },
+
+                {   // 5
+                    images: "https://media.gettyimages.com/id/107593392/photo/wading-boots.jpg?s=612x612&w=gi&k=20&c=Mk4rmHByhhO8XgpnJXl0p90toqsIqSNghpKTU7CXln8=",
+                    rating: "4.2",
+                    price: "9899",
+                    brand: "Lather Shoes",
+                    p_name: "Wading Boots"
+                },
+
+                {   // 6
+                    images: "https://media.istockphoto.com/id/458944693/photo/nike-air-max-90-hyperfuse-trainers.jpg?s=1024x1024&w=is&k=20&c=Zc5QkG75N5FUFktaEef-cCUofkU9Y2rsPhRkcEEqq3Q=",
+                    rating: "4.2",
+                    price: "6599",
+                    brand: "Nike shoes",
+                    p_name: "Nike Air Max 90 Hyperfuse trainers"
+                }
+
+
+            ];
+
+            let show = document.getElementById('card');
+
+            show.innerHTML = images.map(cards => `<div id="card_box">
+            <div id="img-box">
+            <img  width="350px" src="${cards.images}" alt="" id="image1">
+            </div>
+            <div class="price">${cards.price}</div>
+            <div class="brand">${cards.brand}</div>
+            <div class="product">${cards.p_name}</div>
+            </div>`).join(" ");
+
+        }
+    </script>
+
+    <!-- <script src="./ecom.js"></script> -->
+</body>
+
+</html>
